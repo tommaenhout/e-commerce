@@ -40,6 +40,11 @@ export default function DrawerAppBar() {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding>
+          <ListItemButton sx={{ justifyContent: 'center' }}>
+             <CardWidget/>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );

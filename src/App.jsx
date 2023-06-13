@@ -1,14 +1,24 @@
 import { useState } from 'react'
 import './App.css'
 import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'
+import Homepage from './pages/Homepage'
+import ItemDetailPage from './pages/ItemDetailPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
 
   return (
     <>
-      <NavBar />
-      <ItemListContainer greeting="Welcome to the Muay Thai Shop" />
+    <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Homepage/>} />
+          <Route path="/category/:categoryId" element={<Homepage/>} />
+          <Route path="/item/:itemId" element={<ItemDetailPage/>} />
+          <Route path="*" element={<NotFoundPage/>} />
+        </Routes>
+    </Router>
     </>
   )
 }

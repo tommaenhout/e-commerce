@@ -29,7 +29,7 @@ export default function DrawerAppBar() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+      Muay Thai Shop
       </Typography>
       <Divider />
       <List>
@@ -40,6 +40,11 @@ export default function DrawerAppBar() {
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding>
+          <ListItemButton sx={{ justifyContent: 'center' }}>
+             <CardWidget/>
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );

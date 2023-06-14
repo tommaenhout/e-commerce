@@ -5,6 +5,10 @@ import { BrowserRouter as Router,Routes, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import ItemDetailPage from './pages/ItemDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
+import { lazy, Suspense } from 'react'
+
+
+
 
 function App() {
 
@@ -14,7 +18,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Homepage/>} />
-          <Route path="/category/:categoryId" element={<Homepage/>} />
+          <Route path="/category/:categoryName" element={<Homepage/>} />
           <Route path="/item/:itemId" element={<ItemDetailPage/>} />
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>

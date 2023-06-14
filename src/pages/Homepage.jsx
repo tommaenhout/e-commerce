@@ -9,10 +9,9 @@ const Homepage = () => {
         getData("../../products.json")
     }, [])
 
-    console.log(data)
     return (
         <div>
-            <ItemListContainer greeting="Welcome to the Muay Thai shop"/>
+            <ItemListContainer products={data} greeting="Welcome to the Muay Thai shop"/>
         </div>
     );
     }

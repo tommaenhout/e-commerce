@@ -14,10 +14,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardWidget from '../CardWidget';
+import { Link } from 'react-router-dom';
 
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact', 'Products'];
+const navItems = ['Products', 'Clothes', 'Fighting Gear', 'Training Material'];
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -28,15 +29,15 @@ export default function DrawerAppBar() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Link to="/"><Typography style={{ color: "black"}} variant="h6" sx={{ my: 2 }}>
       Muay Thai Shop
-      </Typography>
+      </Typography></Link>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+            <Link to="/category?"><ListItemText primary={item} /></Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -67,7 +68,7 @@ export default function DrawerAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Muay Thai Shop
+            <Link to="/" style={{textDecoration: "none"}}>Muay Thai Shop</Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (

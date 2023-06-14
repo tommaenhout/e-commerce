@@ -1,93 +1,119 @@
 {
     "products": [
       {
+        "id" : 1,
         "type": "Gloves",
+        "category": "fightingGear",
         "name": "Fairtex Muay Thai Gloves",
-        "imagePath": "assets/gloves - 1.jpg",
+        "imagePath": "gloves-1.jpg",
         "price": 79.99,
         "description": "Premium leather gloves with high-density foam padding for optimal hand protection."
       },
       {
+        "id" : 2,
         "type": "Gloves",
+        "category": "fightingGear",
         "name": "Venum Elite Boxing Gloves",
-        "imagePath": "assets/gloves - 2.jpg",
+        "imagePath": "gloves-2.jpg",
         "price": 89.99,
         "description": "Handcrafted gloves made from synthetic leather, offering excellent wrist support and impact absorption."
       },
       {
+        "id" : 3,
         "type": "Gloves",
+        "category": "fightingGear",
         "name": "Twins Special Velcro Gloves",
-        "imagePath": "assets/gloves - 3.jpg",
+        "imagePath": "gloves-3.jpg",
         "price": 69.99,
         "description": "High-quality gloves with an adjustable velcro closure system, ensuring a secure and comfortable fit."
       },
       {
+        "id" : 4,
         "type": "Gloves",
+        "category": "fightingGear",
         "name": "Hayabusa T3 Boxing Gloves",
-        "imagePath": "assets/gloves - 4.jpg",
+        "imagePath": "gloves-4.jpg",
         "price": 99.99,
         "description": "Engineered to deliver optimal hand and knuckle protection, featuring dual strap closure for wrist support."
       },
       {
+        "id" : 5,
         "type": "Kick Pads",
+        "category": "trainingMaterial",
         "name": "Fairtex Kick Pads",
-        "imagePath": "assets/kickPads - 1.jpg",
+        "imagePath": "kickPads-1.jpg",
         "price": 129.99,
         "description": "Handcrafted genuine leather kick pads designed for intense training sessions."
       },
       {
+        "id" : 6,
         "type": "Kick Pads",
+        "category": "trainingMaterial",
         "name": "Venum Giant Kick Pads",
-        "imagePath": "assets/kickPads - 2.jpg",
+        "imagePath": "kickPads-2.jpg",
         "price": 149.99,
         "description": "Extra-large kick pads made from premium synthetic leather, suitable for heavy hitters."
       },
       {
+        "id" : 7,
         "type": "Belly Pad",
+        "category": "trainingMaterial",
         "name": "Top King Belly Pad",
-        "imagePath": "assets/bellyPad.jpg",
+        "imagePath": "bellyPad.jpg",
         "price": 89.99,
         "description": "Durable belly pad designed to absorb powerful strikes and protect the trainer's abdomen."
       },
       {
+        "id" : 8,
         "type": "Shin Guards",
+        "category": "fightingGear",
         "name": "Fairtex Shin Guards",
-        "imagePath": "assets/shinpad - 1.jpg",
+        "imagePath": "shinpad-1.jpg",
         "price": 89.99,
         "description": "High-quality shin guards made from premium synthetic leather, offering maximum shin protection."
       },
       {
+        "id" : 9,
         "type": "Shin Guards",
+        "category": "fightingGear",
         "name": "Venum Challenger Shin Guards",
-        "imagePath": "assets/shinpad - 1.jpg",
+        "imagePath": "shinpad-1.jpg",
         "price": 59.99,
         "description": "Durable synthetic leather shin guards with multi-layered foam padding for superior protection."
       },
       {
+        "id" : 10,
         "type": "Shorts",
+        "category": "clothing",
         "name": "Fairtex Muay Thai Shorts",
-        "imagePath": "assets/shorts - 1",
+        "imagePath": "shorts-1.jpg",
         "price": 39.99,
         "description": "Authentic Thai-style shorts made from satin material for maximum comfort and mobility."
       },
       {
+        "id" : 11,
         "type": "Shorts",
+        "category": "clothing",
         "name": "Venum Challenger 3.0 Shorts",
-        "imagePath": "assets/shorts - 2.jpg",
+        "imagePath": "shorts-2.jpg",
         "price": 34.99,
         "description": "Lightweight shorts with stretch panels for unrestricted movement, suitable for training and competition."
       },
       {
+        "id" : 12,
         "type": "Shorts",
+        "category": "clothing",
         "name": "Twins Special Muay Thai Shorts",
-        "imagePath": "assets/shorts - 3.jpg",
+        "imagePath": "shorts-3.jpg",
         "price": 44.99,
         "description": "Premium shorts featuring traditional Thai designs and an elastic waistband for a secure fit."
       },
       {
+        "id" : 13,
         "type": "Shorts",
+        "category": "clothing",
         "name": "RDX MMA Shorts",
-        "imagePath": "assets/shorts - 4.jpg",
+        "imagePath": "shorts-4.jpg",
         "price": 29.99,
         "description": "Versatile shorts suitable for MMA and Muay Thai training, offering comfort and durability."
       }

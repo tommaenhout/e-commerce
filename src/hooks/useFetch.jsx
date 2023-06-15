@@ -9,10 +9,13 @@ export const useFetch = () => {
     const [loading, setLoading] = useState(true)
 
    
-    const getData = async (url) => {
+    const getData = async (url, id) => {
         try {
+            console.log(id)
             const response = await axios.get(url)
-            console.log(response.data)
+            id ? 
+            setData(response.data.products.find((product) => product.id === id)) 
+            :
             setData(response.data)
         } catch (error) {
             setError(error)

@@ -1,16 +1,18 @@
 
 import { Link } from 'react-router-dom';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import image from '../../assets/fighter.png';
 
 
 const Item = ({ item }) => {
     const { id, name, price, imagePath } = item;
+    const navigate = useNavigate();
 
     return (
         <div>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card onClick={()=>{navigate(`/item/${id}`)}} sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"

@@ -9,7 +9,7 @@ const ItemListContainer = ({ greeting, products}) => {
         <div className="container">
             <Typography variant="h5">{greeting}</Typography>
             <div className="containerItems">
-            {products && products.products.map((product) => {
+            {products && products.map((product) => {
                     return (
                         console.log(product),
                         <Item key={product.id} item={product} />

@@ -10,7 +10,7 @@ const ItemDetailPage = () => {
     const {data,getData,loading} = useFetch()
 
     useEffect(() => {
-        getData("../../products.json", parseInt(itemId) )
+        getData({url: "../../products.json", id: parseInt(itemId)} )
     }, [itemId])
 
     useEffect(() => {
@@ -28,9 +28,9 @@ const ItemDetailPage = () => {
                     <div>
                         <img src={`/src/assets/${data.imagePath}`} alt={data.name} style={{ height: "500px"}}/>
                     <div>
-                        <Typography variant="h5">{data.name}</Typography>
-                        <Typography variant="h5">{data.price}</Typography>
-                        <Typography variant="h5">{data.description}</Typography>
+                        <Typography variant="subtitle1">{data.name}</Typography>
+                        <Typography variant="body">${data.price}</Typography>
+                        <Typography variant="subtitle2">{data.description}</Typography>
                     </div>
                     </div>
                     </div>} 

@@ -17,7 +17,7 @@ const Item = ({ item }) => {
                     <CardMedia
                         component="img"
                         height="400"
-                        image={"src/assets/" + imagePath }
+                        image={"/src/assets/" + imagePath }
                         alt={name}
                     />
                     <CardContent>

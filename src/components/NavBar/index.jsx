@@ -17,8 +17,10 @@ import CardWidget from '../CardWidget';
 import { Link } from 'react-router-dom';
 
 
+
 const drawerWidth = 240;
 const navItems = ['Products', 'Clothes', 'Fighting Gear', 'Training Material'];
+const links = ['/','/category/clothing', '/category/fightingGear', '/category/trainingMaterial'];
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -34,10 +36,10 @@ export default function DrawerAppBar() {
       </Typography></Link>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-            <Link to="/category?"><ListItemText primary={item} /></Link>
+            <Link to={links[index]}><ListItemText primary={item} /></Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -71,10 +73,12 @@ export default function DrawerAppBar() {
             <Link to="/" style={{textDecoration: "none"}}>Muay Thai Shop</Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+            {navItems.map((item, index) => (
+              <Link to={links[index]} style={{textDecoration: "none"}}>
+                <Button key={item} sx={{ color: '#fff' }}>
                 {item}
-              </Button>
+             
+              </Button></Link>
             ))}
             <Button sx={{ color: '#fff' }}> <CardWidget/></Button>
           </Box>

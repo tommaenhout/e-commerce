@@ -14,10 +14,6 @@ const ItemDetailPage = () => {
         getData({url: "../../products.json", id: parseInt(itemId)} )
     }, [itemId])
 
-    useEffect(() => {
-        console.log(data)
-    }, [data])
-
     return (
         loading ? (
             <div>Loading...</div>

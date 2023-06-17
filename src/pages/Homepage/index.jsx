@@ -23,7 +23,6 @@ const Homepage = () => {
     }
 
     useEffect(() => {
-        console.log(categoryName)
         categoryName ? 
         getData({url: "../../products.json", categoryName : categoryName}) :
         getData({url: "../../products.json"})

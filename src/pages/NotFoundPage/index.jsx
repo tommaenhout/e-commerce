@@ -1,4 +1,4 @@
-import ko from "../assets/ko.jpg"
+import ko from "../../assets/ko.jpg"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

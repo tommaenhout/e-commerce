@@ -1,6 +1,6 @@
-import ItemListContainer from "../components/ItemListContainer";
+import ItemListContainer from "../../components/ItemListContainer";
 import {useEffect, useState} from "react";
-import useFetch from "../hooks/useFetch";
+import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ const Homepage = () => {
             case "fightingGear":
                 return "Fighting gear : Gloves, shin guards, head gear, etc."
             case "trainingMaterial":
-                return "Training gear : Pads, bags, etc."
+                return "Training material : Pads, bags, etc."
             default:
                 return "Welcome to the Muay Thai shop"
         }

@@ -10,6 +10,8 @@ export const useFetch = () => {
 
    
     const getData = async ({url, id, categoryName}) => {
+        console.log (url)
+        console.log (id)
         try {
             console.log(id)
             console.log(categoryName)
@@ -23,6 +25,7 @@ export const useFetch = () => {
             console.log(data)
         } catch (error) {
             setError(error)
+            console.error(error)
         } finally {
             setLoading(false)
         }

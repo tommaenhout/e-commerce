@@ -74,7 +74,7 @@ export default function DrawerAppBar() {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item, index) => (
-              <Link to={links[index]} style={{textDecoration: "none"}}>
+              <Link key={index} to={links[index]} style={{textDecoration: "none"}}>
                 <Button key={item} sx={{ color: '#fff' }}>
                 {item}
              

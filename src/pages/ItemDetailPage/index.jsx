@@ -11,7 +11,7 @@ const ItemDetailPage = () => {
     const {data,getData,loading} = useFetch()
 
     useEffect(() => {
-        getData({url: "../../products.json", id: parseInt(itemId)} )
+        getData({id:  itemId})
     }, [itemId])
 
     return (
@@ -24,7 +24,7 @@ const ItemDetailPage = () => {
               <BodyContainer>
                 <div>
                   <img
-                    src={`/src/assets/${data.imagePath}`}
+                    src={data.imagePath}
                     alt={data.name}
                     style={{ height: "500px" }}
                   />

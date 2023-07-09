@@ -2,8 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import image from '../../assets/fighter.png';
+
 
 
 const Item = ({ item }) => {
@@ -17,7 +16,7 @@ const Item = ({ item }) => {
                     <CardMedia
                         component="img"
                         height="400"
-                        image={"/src/assets/" + imagePath }
+                        image={imagePath}
                         alt={name}
                     />
                     <CardContent>

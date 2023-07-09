@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState } from "react";
-
+import { db } from "../firebase/firebaseConfig";
+import { collection, getDocs, query, where, documentId } from "firebase/firestore";
 
 
 export const useFetch = () => {
@@ -8,16 +8,41 @@ export const useFetch = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
 
-   
-    const getData = async ({url, id, categoryName}) => {
+    
+   const getProducts = async () => {
+        const q = query(collection(db, "productos"));
+        runQuery(q).then((data) => setData(data));
+   }
+
+   const getProductsByCategory = async (categoryName) => {
+        const q = query(collection(db, "productos"), where("category", "==", categoryName));
+        runQuery(q).then((data) => setData(data));
+    }
+
+    const getProductById = async (id) => {
+        const q = query(collection(db, "productos"), where (documentId(), "==", id));
+        runQuery(q).then((data) => setData(data[0]));
+    }
+
+    const runQuery = async (q) => {
+        const querySnapshot = await getDocs(q);
+        const products = [];
+        querySnapshot.forEach((doc) => {
+            products.push({...doc.data(), id: doc.id});
+        }
+        );
+        return products;
+    }       
+
+    const getData = async ({ id, categoryName}) => {
         try {
-            const response = await axios.get(url)
+            setLoading(true)
             id ? 
-            setData(response.data.products.find((product) => product.id === id)) 
+            getProductById(id)
             : categoryName ?
-            setData(response.data.products.filter((product) => product.category === categoryName))
+            getProductsByCategory(categoryName)
             :
-            setData(response.data.products)
+            getProducts()
         } catch (error) {
             setError(error)
             console.error(error)

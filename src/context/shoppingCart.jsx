@@ -13,12 +13,14 @@ export const ShoppingCartContextProvider = (props) => {
             setShoppingCart(shoppingCart.filter(item => item.id !== product.id));
         }
 
+        const total = shoppingCart.reduce((acc, item) => acc + item.price, 0);
+
         const clearCart = () => {
             setShoppingCart([]);
         }
 
         return (
-            <ShoppingCartContext.Provider value={{shoppingCart, addToCart, removeFromCart, clearCart}}>
+            <ShoppingCartContext.Provider value={{shoppingCart, addToCart, removeFromCart, clearCart, total}}>
                 {props.children}
             </ShoppingCartContext.Provider>
         );

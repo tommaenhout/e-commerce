@@ -15,6 +15,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardWidget from '../CardWidget';
 import { Link } from 'react-router-dom';
+import { ShoppingCartContext } from '../../context/shoppingCart';
+import { useContext, useState } from 'react';
+
 
 
 
@@ -23,7 +26,10 @@ const navItems = ['Products', 'Clothes', 'Fighting Gear', 'Training Material'];
 const links = ['/','/category/clothing', '/category/fightingGear', '/category/trainingMaterial'];
 
 export default function DrawerAppBar() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const {shoppingCart} = useContext(ShoppingCartContext)
+
+  console.log(shoppingCart)
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -80,7 +86,7 @@ export default function DrawerAppBar() {
              
               </Button></Link>
             ))}
-            <Button sx={{ color: '#fff' }}> <CardWidget/></Button>
+            <Button sx={{ color: '#fff' }}><CardWidget total={shoppingCart.length}/></Button>
           </Box>
         </Toolbar>
       </AppBar>

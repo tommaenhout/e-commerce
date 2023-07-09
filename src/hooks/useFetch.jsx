@@ -8,7 +8,7 @@ export const useFetch = () => {
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    
+
    const getProducts = async () => {
         const q = query(collection(db, "productos"));
         runQuery(q).then((data) => setData(data));
@@ -29,8 +29,7 @@ export const useFetch = () => {
         const products = [];
         querySnapshot.forEach((doc) => {
             products.push({...doc.data(), id: doc.id});
-        }
-        );
+        });
         return products;
     }       
 
@@ -46,6 +45,7 @@ export const useFetch = () => {
         } catch (error) {
             setError(error)
             console.error(error)
+          
         } finally {
             setLoading(false)
         }

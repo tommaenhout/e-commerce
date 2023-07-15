@@ -29,7 +29,6 @@ export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const {shoppingCart} = useContext(ShoppingCartContext)
 
-  console.log(shoppingCart)
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);

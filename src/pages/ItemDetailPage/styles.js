@@ -30,6 +30,7 @@ export const BodyContainer = styled.div`
 
 export const TextContainer = styled.div`
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: start;
     justify-content: center;

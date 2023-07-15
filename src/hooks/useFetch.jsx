@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { db } from "../firebase/firebaseConfig";
-import { collection, getDocs, query, where, documentId } from "firebase/firestore";
-
+import { collection, getDocs, query, where, documentId, addDoc } from "firebase/firestore";
+import Swal from 'sweetalert2'
 
 export const useFetch = () => {
     const [data, setData] = useState(null)
@@ -50,10 +50,25 @@ export const useFetch = () => {
             setLoading(false)
         }
     }
-     
-    
 
-    return { data, error, loading, getData }
+    const addOrder =  (order) => {
+        setLoading(true)
+         addDoc(collection(db, "orders"), order).then((docRef) => {
+            Swal.fire({
+                title: 'Thank you for your purchase!',
+                text: `Your order number is: ${docRef.id}`,
+                icon: 'success',
+                confirmButtonText: 'Ok'
+                })
+        })
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        })
+        .finally (() => setLoading(false))
+    }
+
+
+    return { data, error, loading, getData, addOrder }
 }
 
 export default useFetch
